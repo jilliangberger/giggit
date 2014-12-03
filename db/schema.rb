@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203201221) do
+ActiveRecord::Schema.define(version: 20141203212505) do
 
   create_table "bands", force: true do |t|
     t.string   "band_name"
     t.string   "genre"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "home_town"
+    t.string   "facebook"
+    t.string   "soundcloud"
+    t.string   "reverbnation"
+    t.string   "band_camp"
     t.integer  "venue_id"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
