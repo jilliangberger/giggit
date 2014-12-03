@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_venue_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Venue
+  <% end %>
+  <h1>Listing venues</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Venue name</th>
+            <th>Location</th>
+            <th>Contact number</th>
+            <th>Homepage link</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @venues) do |venue| %>
+            <td><%= venue.venue_name %></td>
+            <td><%= venue.location %></td>
+            <td><%= venue.contact_number %></td>
+            <td><%= venue.homepage_link %></td>
+            <td><%= link_to 'Show', venue %></td>
+        <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+        <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
