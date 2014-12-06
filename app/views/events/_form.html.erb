@@ -1,0 +1,44 @@
+<%= form_for(@event, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
+  <% if @event.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h4>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :band_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :band_id, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :venue_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :venue_id, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :date, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :booking_agent_number, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :booking_agent_number, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

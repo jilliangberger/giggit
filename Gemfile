@@ -45,6 +45,9 @@ group :test do
   gem 'shoulda-matchers'
 end
 
+gem 'nested_scaffold'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
