@@ -28,6 +28,8 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
+        session[:id] = @venue.id
+        @user_type = 'venue'
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
         format.json { render :show, status: :created, location: @venue }
       else
@@ -69,6 +71,6 @@ class VenuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:venue_name, :location, :contact_number, :homepage_link)
+      params.require(:venue).permit(:venue_name, :location, :contact_number, :homepage_link, :email, :password, :password_confirmation)
     end
 end

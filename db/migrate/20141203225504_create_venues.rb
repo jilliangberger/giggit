@@ -5,6 +5,8 @@ class CreateVenues < ActiveRecord::Migration
       t.string :location
       t.string :contact_number
       t.string :homepage_link
+      t.string :password_digest
+      t.string :email
 
       t.timestamps
     end

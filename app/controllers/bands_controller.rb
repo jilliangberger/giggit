@@ -28,7 +28,9 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
-        format.html { redirect_to @band, notice: 'Band was successfully created.' }
+        session[:id] = @band.id
+        @user_type = 'band'
+        format.html { redirect_to @band, notice: "Band was successfully created. Signed in as #{@band.email}" }
         format.json { render :show, status: :created, location: @band }
       else
         format.html { render :new }
