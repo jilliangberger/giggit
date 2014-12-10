@@ -38,6 +38,7 @@ feature 'Band Authentication' do
   end
   scenario 'allows a logged in user to logout' do
     band = FactoryGirl.create(:band, password:'COd3rs95')
+    # This test functions for both band and venue
 
     visit login_path
 
