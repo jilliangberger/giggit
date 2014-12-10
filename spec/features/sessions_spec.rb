@@ -19,6 +19,42 @@ feature 'Band Authentication' do
     expect(page).to have_text('Band was successfully created.')
     # expect(page).to have_text('Signed in as john@doe.com')
   end
+  # Login scenario is for both Band and Venue
+  scenario 'allows an existing user to login'do
+    band = FactoryGirl.create(:band)
+
+    visit '/'
+
+    expect(page).to have_link('Login')
+
+    click_link('Login')
+
+    fill_in 'Email', with: band.email
+    fill_in 'Password', with: band.password
+
+    click_button('Login')
+
+    expect(page).to have_text("Welcome back #{band.email}.")
+  end
+  scenario 'allows a logged in user to logout' do
+    band = FactoryGirl.create(:band, password:'COd3rs95')
+
+    visit login_path
+
+    fill_in 'Email', with: band.email
+    fill_in 'Password', with: band.password
+
+    click_button('Login')
+    
+    expect(page).to have_text("Welcome back #{band.email}.")
+
+    expect(page).to have_link('Logout')
+
+    click_link('Logout')
+
+    expect(page).to have_text("#{band.email} has been logged out.")
+    expect(page).to_not have_text("Welcome back #{band.email}.")
+  end
 end
 feature 'Venue Authentication' do
   scenario 'allows a venue to signup' do
@@ -41,4 +77,3 @@ feature 'Venue Authentication' do
     expect(page).to have_text('Venue was successfully created.')
   end
 end
-

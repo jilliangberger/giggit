@@ -29,7 +29,7 @@ class VenuesController < ApplicationController
     respond_to do |format|
       if @venue.save
         session[:id] = @venue.id
-        @user_type = 'venue'
+        session[:email] = @venue.email
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
         format.json { render :show, status: :created, location: @venue }
       else
