@@ -43,6 +43,7 @@ group :test, :darwin, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
+  gem 'byebug'
 end
 
 group :test do

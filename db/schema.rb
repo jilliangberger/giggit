@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141206045534) do
     t.string   "homepage_link"
     t.string   "password_digest"
     t.string   "email"
+    t.boolean  "available"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
