@@ -21,6 +21,15 @@ class BandsController < ApplicationController
   def edit
   end
 
+  # Get /bands/1/band_member
+  def new_band_member
+    @band_member = BandMember.new
+  end
+
+
+
+
+
   # POST /bands
   # POST /bands.json
   def create
