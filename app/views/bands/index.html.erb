@@ -9,39 +9,36 @@
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
-      <tr>
-            <th>Band name</th>
-            <th>Genre</th>
-            <th>Email</th>
-            <th>Phone number</th>
-            <th>Home town</th>
-            <th>Facebook</th>
-            <th>Soundcloud</th>
-            <th>Reverbnation</th>
-            <th>Band camp</th>
-            <th>Venue</th>
-            <th></th>
-        <th></th>
-        <th></th>
-      </tr>
+    <tr>
+      <th>Band name</th>
+      <th>Genre</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Home town</th>
+      <th>Facebook</th>
+      <th>Soundcloud</th>
+      <th>Reverbnation</th>
+      <th>Band camp</th>
+      <th>Venue</th>
+    </tr>
     </thead>
 
     <tbody>
-      <%= content_tag_for(:tr, @bands) do |band| %>
-            <td><%= band.band_name %></td>
-            <td><%= band.genre %></td>
-            <td><%= band.email %></td>
-            <td><%= band.phone_number %></td>
-            <td><%= band.home_town %></td>
-            <td><%= band.facebook %></td>
-            <td><%= band.soundcloud %></td>
-            <td><%= band.reverbnation %></td>
-            <td><%= band.band_camp %></td>
-            <td><%= band.venue_id %></td>
-            <td><%= link_to 'Show', band %></td>
-        <td><%= link_to 'Edit', edit_band_path(band) %></td>
-        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+    <%= content_tag_for(:tr, @bands) do |band| %>
+      <td><%= band.band_name %></td>
+      <td><%= band.genre %></td>
+      <td><%= band.email %></td>
+      <td><%= band.phone_number %></td>
+      <td><%= band.home_town %></td>
+      <td><%= band.facebook %></td>
+      <td><%= band.soundcloud %></td>
+      <td><%= band.reverbnation %></td>
+      <td><%= band.band_camp %></td>
+      <td><%= band.venue_id %></td>
+      <td><%= link_to 'Show', band %></td>
+      <td><%= link_to 'Edit', edit_band_path(band) %></td>
+      <td><%= link_to 'Destroy', band, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    <% end %>
     </tbody>
   </table>
 </div>
