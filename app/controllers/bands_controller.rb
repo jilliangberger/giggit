@@ -27,9 +27,6 @@ class BandsController < ApplicationController
   end
 
 
-
-
-
   # POST /bands
   # POST /bands.json
   def create
