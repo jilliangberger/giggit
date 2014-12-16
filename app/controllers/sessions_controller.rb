@@ -16,14 +16,13 @@ class SessionsController < ApplicationController
         notice: "Welcome back #{user.email}."
     else
       flash[:error] = 'Invalid username or password'
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 
   def destroy
-    if
-      user = current_user
-      session[:id] = nil
+    if user = current_user
+      session.delete(:email)
       redirect_to root_path,
         notice: "#{user.email} has been logged out."
     end
