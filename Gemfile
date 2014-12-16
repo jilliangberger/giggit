@@ -54,6 +54,8 @@ end
 
 gem 'nested_scaffold'
 
+gem 'cancancan'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
