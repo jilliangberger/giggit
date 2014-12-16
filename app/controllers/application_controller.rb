@@ -8,11 +8,12 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
+
     if session[:email]
-      @band ||= Band.find_by(email: session[:email])
-      @venue ||= Venue.find_by(email: session[:email])
+      @band_user = Band.find_by(email: session[:email])
+      @venue_user = Venue.find_by(email: session[:email])
     end
-    @band || @venue || session.delete(:email)
-    @band || @venue
+    @band_user || @venue_user || session.delete(:email)
+    @band_user || @venue_user
   end
 end
