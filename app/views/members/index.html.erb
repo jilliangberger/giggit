@@ -1,6 +1,11 @@
-<h1>Listing members for <%= @band.band_name %></h1>
+<h1>Band Members In "<%=@band.band_name%>"</h1>
 
-<table>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+
+<div class="table-responsive">
+<table class="table table-striped table-bordered table-hover">
   <tr>
     <th>Full name</th>
     <th>Instrument</th>
@@ -8,7 +13,7 @@
     <th></th>
     <th></th>
   </tr>
-
+    </thead>
 <% @members.each do |member| %>
   <tr>
     <td><%= member.full_name %></td>
@@ -22,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Member', new_band_member_path(params[:band_id]) %>
+<%= link_to 'New Member', new_band_member_path(params[:band_id]), :class => 'btn btn-primary' %>
