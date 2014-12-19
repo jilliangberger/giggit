@@ -14,7 +14,7 @@
 //= require jquery_ujs
 // possible future code jquery-ui/datapicker
 //= require jquery-ui
-//= require turbolinks
+
 //= require bootstrap
 //= require_tree .
 
