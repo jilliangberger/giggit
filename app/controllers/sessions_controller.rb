@@ -12,8 +12,13 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:id] = user.id
       session[:email] = user.email
-      redirect_to root_path,
-        notice: "Welcome back #{user.email}."
+      if @band
+        redirect_to band_path(@band.id),
+          notice: "Welcome back #{user.email}."
+      else
+        redirect_to venue_path(@venue.id),
+          notice: "Welcome back #{user.email}."
+      end
     else
       flash[:error] = 'Invalid username or password'
       redirect_to login_path
