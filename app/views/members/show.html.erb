@@ -12,4 +12,6 @@
 
 
 <%= link_to 'Edit', edit_band_member_path(@member.band, @member) %> |
-<%= link_to 'Back', band_members_path(@member.band) %>
+
+<%= link_to 'New Member', new_band_member_path(params[:band_id])%> |
+<%= link_to 'See Band Members', band_members_path(params[:band_id]) %>
